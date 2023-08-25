@@ -57,7 +57,7 @@ HEDdetector.from_pretrained("lllyasviel/ControlNet", cache_dir=PROCESSORS_CACHE)
 MLSDdetector.from_pretrained("lllyasviel/ControlNet", cache_dir=PROCESSORS_CACHE)
 OpenposeDetector.from_pretrained("lllyasviel/Annotators", cache_dir=PROCESSORS_CACHE)
 
-pipe = StableDiffusionPipeline.from_pretrained("runwayml/stable-diffusion-v1-5", torch_dtype=torch.float16, cache_dir=TMP_CACHE)
+pipe = StableDiffusionPipeline.from_pretrained("sinkinai/Beautiful-Realistic-Asians-v5", torch_dtype=torch.float16, cache_dir=TMP_CACHE)
 pipe.save_pretrained(SD15_WEIGHTS)
 
 shutil.rmtree(TMP_CACHE)
