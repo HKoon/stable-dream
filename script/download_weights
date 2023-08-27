@@ -19,15 +19,13 @@ if os.path.exists(CONTROLNET_CACHE):
     shutil.rmtree(CONTROLNET_CACHE)
 os.makedirs(CONTROLNET_CACHE)
 
-if os.path.exists(SD15_WEIGHTS):
-    shutil.rmtree(SD15_WEIGHTS)
-os.makedirs(SD15_WEIGHTS)
+if os.path.exists(PROCESSORS_CACHE):
+    shutil.rmtree(PROCESSORS_CACHE)
+os.makedirs(PROCESSORS_CACHE)
 
-'''
 if os.path.exists(SD15_WEIGHTS):
     shutil.rmtree(SD15_WEIGHTS)
 os.makedirs(SD15_WEIGHTS)
-'''
 
 TMP_CACHE = "tmp_cache"
 
@@ -49,6 +47,7 @@ for name, model in AUX_IDS.items():
     )
     aux = aux.half()
     aux.save_pretrained(os.path.join(CONTROLNET_CACHE, name))
+  
 
 MidasDetector.from_pretrained("lllyasviel/ControlNet", cache_dir=PROCESSORS_CACHE)
 AutoImageProcessor.from_pretrained(
